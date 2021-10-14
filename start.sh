@@ -18,6 +18,7 @@ genesis() {
   --data-dir data \
   --blocks-dir blocks \
   --delete-all-blocks \
+  --signature-provider $TESTNET_EOSIO_PUBLIC_KEY=KEY:$TESTNET_EOSIO_PRIVATE_KEY \
   --genesis-json genesis.json \
   >> "nodeos.log" 2>&1 &
 
@@ -51,10 +52,7 @@ setup_accounts() {
   )
 
   for account in "${accounts[@]}"; do
-    echo "Creating account ${account}"
     cleos create account eosio $account $TESTNET_EOSIO_PUBLIC_KEY
-    echo "${result}"
-    echo "Account ${account} created"
   done
   lock_wallet
   echo "====================================== Done setup_accounts ======================================"
@@ -110,9 +108,9 @@ setup_contracts() {
   cleos set contract eosio.msig /telos.contracts/eosio.msig/
   cleos push action eosio setpriv '["eosio.msig", 1]' -p eosio@active
 
-  cleos push action eosio.token create '[ "eosio", "10000000000.0000 EOS" ]' -p eosio.token@active
-  cleos push action eosio.token issue '[ "eosio", "1000000000.0000 EOS", "memo" ]' -p eosio@active
-  cleos push action eosio init '["0", "4,EOS"]' -p eosio@active
+  cleos push action eosio.token create '[ "eosio", "10000000000.0000 TLOS" ]' -p eosio.token@active
+  cleos push action eosio.token issue '[ "eosio", "1000000000.0000 TLOS", "memo" ]' -p eosio@active
+  cleos push action eosio init '["0", "4,TLOS"]' -p eosio@active
 
   # lock_wallet
   echo "====================================== Done setup_contracts ======================================"
