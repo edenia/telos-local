@@ -7,7 +7,7 @@
 # Telos Local Development Network
 
 ## Note
-> Since some problems arose with the compilation of the telos.contract [latest release at this moment](https://github.com/telosnetwork/telos.contracts/tree/release/1.7.x), this project creates the Local Network configuration with [release/1.6.x](https://github.com/telosnetwork/telos.contracts/tree/release/1.6.x) version.
+> Since some problems arose with the compilation of the telos.contract [latest release at this moment](https://github.com/telosnetwork/telos.contracts/tree/release/1.7.x), this project creates the Local Network configuration with [release/1.6.x](https://github.com/telosnetwork/telos.contracts/tree/release/1.6.x) version. The issue was reported and can be found [here](https://github.com/telosnetwork/telos.contracts/issues/19).
 
 ## Description
 telos-local provides a quick way to setup a Telos Local network for development.
