@@ -12,13 +12,12 @@ run:
 build-docker: ##@devops Build the docker image
 build-docker: ./Dockerfile
 	echo "Building docker container ..."
-	$(eval -include .env)
 	@docker pull $(DOCKER_REGISTRY)/$(IMAGE_NAME):$(VERSION) || true
 	@docker build \
 		-t $(DOCKER_REGISTRY)/$(IMAGE_NAME):$(VERSION) \
 		-t $(DOCKER_REGISTRY)/$(IMAGE_NAME):$(LATEST_TAG) \
-		--build-arg testnet_eosio_private_key="$(TESTNET_EOSIO_PRIVATE_KEY)" \
-		--build-arg testnet_eosio_public_key="$(TESTNET_EOSIO_PUBLIC_KEY)" \
+		--build-arg testnet_eosio_private_key="5KQPgxtxWqziZggdsYjgMkBcd8iHr96HPY2kr4CGLqA7eid4FCG" \
+		--build-arg testnet_eosio_public_key="EOS6SpGqFohbAHZHK3cDTT7oKyQedwXd4nZ6H6t9PKk2UN5hqNbna" \
 		.
 
 push-image: ##@devops Push the freshly built image and tag with release or latest tag

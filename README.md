@@ -4,7 +4,10 @@
 	</a>
 </p>
 
-# Telos Mainnet Local Network
+# Telos Local Development Network
+
+## Note
+> Since some problems arose with the compilation of the telos.contract [latest release at this moment](https://github.com/telosnetwork/telos.contracts/tree/release/1.7.x), this project creates the Local Network configuration with [release/1.6.x](https://github.com/telosnetwork/telos.contracts/tree/release/1.6.x) version.
 
 ## Description
 telos-local provides a quick way to setup a Telos Local network for development.
@@ -63,15 +66,11 @@ If you run the command `cleos get info` or go to` http://127.0.0.1:8888/v1/chain
 **Note:** As the docker image were pulled from `eoscostarica506`, the eosio keys are:
 
 ```
-Private key: 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
-Public key: EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
+Private key: 5KQPgxtxWqziZggdsYjgMkBcd8iHr96HPY2kr4CGLqA7eid4FCG
+Public key: EOS6SpGqFohbAHZHK3cDTT7oKyQedwXd4nZ6H6t9PKk2UN5hqNbna
 ```
 
 ## Instructions for creating Telos Network image locally
-Before starting, to use the `make` option, please do the following steps:
-- In your terminal, run `cp .env.example .env`
-- Set correct `.env` values to your local environment
-
 To create the Docker image locally, you must run the following commands:
 - Clone the local Telos repository `https://github.com/eoscostarica/telos-local`
 - Enter to the cloned repository folder `cd <path/telos-local>`
