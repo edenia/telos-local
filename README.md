@@ -4,24 +4,27 @@
 	</a>
 </p>
 
-# Telos Mainnet Local Network
+# Telos Local Development Network
+
+## Note
+> Since some problems arose with the compilation of the telos.contract [latest release at this moment](https://github.com/telosnetwork/telos.contracts/tree/release/1.7.x), this project creates the Local Network configuration with [release/1.6.x](https://github.com/telosnetwork/telos.contracts/tree/release/1.6.x) version. The issue was reported and can be found [here](https://github.com/telosnetwork/telos.contracts/issues/19).
 
 ## Description
-Telos Local provides a quick way to setup a Telos local network for development.
+telos-local provides a quick way to setup a Telos Local network for development.
 
 The primary benefits of containers are consistency across different environments and deployment ease.
 
 This project works along with a [full-stack-boilerplate](https://github.com/eoscostarica/full-stack-boilerplate) to help you build your EOS dApp.
 
 ### Why to use a local environment?
-Having a local environment provides a series of benefits that you cannot in a public network, for example, with Telos Network locally, transaction costs are avoided since they are carried out in a development environment and not in production, also, they are accessed to system contracts to modify them as appropriate.
+Local environments provide a series of benefits that you cannot in a public network, for example, with Telos Network locally, transaction costs are avoided since they are carried out in a development environment and not in production, also, they are accessed to system contracts to modify them as appropriate.
 
 In a Blockchain network every transaction creates an immutable record and everything that is modified can affect both positively and negatively the users within it, it is for this reason that it is essential to have an environment premises where functionality tests, performance tests, stress tests, among others, can be carried out without the risk of producing a failure that affects users.
 
 Finally, a factor to consider is the time that is reduced in the initial configuration of any network, this image allows directly, with only two commands to have the network installed and ready to perform functionality tests as necessary.
 
 ### Contracts
-The Telos image is based on the `eosio.system`, `eosio.token` and `eosio.msig` contracts for its configuration. Your code can be found at [this link](https://github.com/telosnetwork/telos.contracts).
+The Telos image is based on the `eosio.system`, `eosio.token` and `eosio.msig` contracts for its configuration. The source code can be found at [this link](https://github.com/telosnetwork/telos.contracts).
 1. **eosio.system**: Defines the structures and actions needed for blockchain's core functionality.
 2. **eosio.token**: Defines the structures and actions that allow users to create, issue, and manage tokens for EOSIO-based blockchains.
 3. **eosio.msig**: Allows the creation of proposed transactions that require authorization from a list of accounts.
@@ -63,16 +66,16 @@ If you run the command `cleos get info` or go to` http://127.0.0.1:8888/v1/chain
 **Note:** As the docker image were pulled from `eoscostarica506`, the eosio keys are:
 
 ```
-Private key: 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
-Public key: EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
+Private key: 5KQPgxtxWqziZggdsYjgMkBcd8iHr96HPY2kr4CGLqA7eid4FCG
+Public key: EOS6SpGqFohbAHZHK3cDTT7oKyQedwXd4nZ6H6t9PKk2UN5hqNbna
 ```
 
 ## Instructions for creating Telos Network image locally
 To create the Docker image locally, you must run the following commands:
 - Clone the local Telos repository `https://github.com/eoscostarica/telos-local`
 - Enter to the cloned repository folder `cd <path/telos-local>`
-- Build the Dockerfile image with env variables `docker build -t telos-local --build-arg testnet_eosio_public_key="<public_key>" --build-arg testnet_eosio_private_key="<private_key>" .`
-- Run the Dockerfile image `docker run -dp 8888:8888 telos-local`
+- Build the Dockerfile image with env variables `make build-docker` or `docker build -t telos-local --build-arg testnet_eosio_public_key="<public_key>" --build-arg testnet_eosio_private_key="<private_key>" .`
+- Run the Dockerfile image `make run` or `docker run -dp 8888:8888 telos-local`
 - Run the command `cleos get info` or check the link in the browser `http://127.0.0.1:8888/v1/chain/get_info`
 
 By this point, you already have the Telos Local Network image running locally.
@@ -83,11 +86,13 @@ By this point, you already have the Telos Local Network image running locally.
 ├── .github
 │   └── workflows
 │       └── publish-docker-image.yml
-├── docs ..................... Some media content for README
+├── .env.example ............. eosio configuration key example
+├── .gitignore ............... Specify which files are not uploaded
 ├── config.ini ............... Nodeos configuration file
 ├── Dockerfile ............... Contains instructions for building the Telos Local Network image
 ├── genesis.json ............. Specifies the network genesis node parameters
 ├── LICENSE .................. Terms and Conditions
+├── makefile ................. Handle batch commands abbreviations
 ├── README.md ................ Repository specification
 └── start.sh ................. Instructions for configuring contracts and usage characteristics
 ```
@@ -96,7 +101,7 @@ By this point, you already have the Telos Local Network image running locally.
 MIT © [EOS Costa Rica](https://eoscostarica.io/)
 
 ## Contributing
-If you want to contribute to this repository, please follow the steps below:
+If you want to contribute to this repository, please follow the steps down below:
 
 1. Fork the project
 2. Create a new branch (`git checkout -b feat/sometodo`)
