@@ -16,7 +16,7 @@ The primary benefits of containers are consistency across different environments
 
 This project works along with a [full-stack-boilerplate](https://github.com/eoscostarica/full-stack-boilerplate) to help you build your EOS dApp.
 
-### Why to use a local environment?
+### Why use a local environment?
 Local environments provide a series of benefits that you cannot in a public network, for example, with Telos Network locally, transaction costs are avoided since they are carried out in a development environment and not in production, also, they are accessed to system contracts to modify them as appropriate.
 
 In a Blockchain network every transaction creates an immutable record and everything that is modified can affect both positively and negatively the users within it, it is for this reason that it is essential to have an environment premises where functionality tests, performance tests, stress tests, among others, can be carried out without the risk of producing a failure that affects users.
@@ -97,9 +97,6 @@ By this point, you already have the Telos Local Network image running locally.
 └── start.sh ................. Instructions for configuring contracts and usage characteristics
 ```
 
-## License
-MIT © [EOS Costa Rica](https://eoscostarica.io/)
-
 ## Contributing
 If you want to contribute to this repository, please follow the steps down below:
 
@@ -117,13 +114,15 @@ If you find any bugs, please report them by opening an issue at [this link](http
 ## What is EOSIO?
 EOSIO is a highly performant open-source blockchain platform, built to support and operate safe, compliant, and predictable digital infrastructures.
 
-## About EOS Costa Rica
-<br>
-<center>
-<img src="https://raw.githubusercontent.com/eoscostarica/design-assets/master/logos/eosCR/fullColor-horizontal-transparent-white.png" width="400" >
-</center>
-<br>
+## About Edenia
 
-EOS Costa Rica is an independently-owned, self-funded, bare-metal Genesis block producer that provides stable and secure infrastructure for EOSIO blockchains. We support open source software for our community while offering enterprise solutions and custom smart contract development for our clients.
+<p align="center">
+	<a href="https://edenia.com">
+		<img src="https://user-images.githubusercontent.com/5632966/165814672-9a7763a8-9748-405d-8bc0-de0278ce9eb4.png" width="300">
+	</a>
+</p>
+<br/>
 
-[eoscostarica.io](https://eoscostarica.io/)
+Edenia runs independent blockchain infrastructure and develops web3 solutions. Our team of technology-agnostic builders has been operating since 1987, leveraging the newest technologies to make the internet safer, more efficient, and more transparent.
+
+[edenia.com](https://edenia.com/)
