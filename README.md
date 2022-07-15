@@ -1,8 +1,10 @@
 <p align="center">
+	<img src="https://user-images.githubusercontent.com/55892352/178834510-3dd357e1-1993-4d10-88f6-e1e1615dce02.png" width="500" >
+	
+<p align="center">
 	<a href="#">
 		<img src="https://img.shields.io/dub/l/vibe-d.svg" alt="MIT">
 	</a>
-</p>
 
 # Telos Local Development Network
 
@@ -116,12 +118,15 @@ EOSIO is a highly performant open-source blockchain platform, built to support a
 
 ## About Edenia
 
-<p align="center">
+<div align="center">
 	<a href="https://edenia.com">
-		<img src="https://user-images.githubusercontent.com/5632966/165814672-9a7763a8-9748-405d-8bc0-de0278ce9eb4.png" width="300">
+		<img src="https://raw.githubusercontent.com/edenia/.github/master/.github/workflows/images/edenia-logo.png" width="300">
 	</a>
-</p>
-<br/>
+	
+[![Twitter](https://img.shields.io/twitter/follow/EdeniaWeb3?style=for-the-badge)](https://twitter.com/EdeniaWeb3)
+![Discord](https://img.shields.io/discord/946500573677625344?color=black&label=discord&logo=discord&logoColor=white&style=for-the-badge)
+
+</div>
 
 Edenia runs independent blockchain infrastructure and develops web3 solutions. Our team of technology-agnostic builders has been operating since 1987, leveraging the newest technologies to make the internet safer, more efficient, and more transparent.
 
